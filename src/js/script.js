@@ -70,14 +70,15 @@
       menuContainer.appendChild(thisProduct.element);    
     }
     initAccordion(){
-      //      const  thisProduct = this;
+      const  thisProduct = this;
         
       /* find the clickable trigger (the element that should react to clicking) */
+      let trigger = thisProduct.accordionTrigger;
 
-      /* START: click event listener to trigger */
-
+      /* [IN PROGRESS]START: click event listener to trigger */
+      trigger.addEventListener('click',initAccordion);
       /* prevent default action for event */
-
+      event.preventDefault();
       /* toggle active class on element of thisProduct */
 
       /* find all active products */
