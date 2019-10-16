@@ -76,37 +76,34 @@
       let trigger = thisProduct.accordionTrigger;
 
       /* [IN PROGRESS]START: click event listener to trigger */
-      trigger.addEventListener('click',initAccordion);
-      /* prevent default action for event */
-      event.preventDefault();
-      /* toggle active class on element of thisProduct */
+      trigger.addEventListener('click',function(){
+           
+        /* prevent default action for event */
+        event.preventDefault();
+        /* toggle active class on element of thisProduct */
+        thisProduct.element.classList.toggle('active');
+        /* find all active products */
+        const activeproducts = document.querySelectorAll(select.all.menuProductsActive);
+        /* START LOOP: for each active product */
+        for( let activeproduct of activeproducts) {
+          console.log('ThisProduct:',thisProduct);
+          console.log('activeproduct:',activeproduct);
+        }
+        /* START: if the active product isn't the element of thisProduct */
 
-      /* find all active products */
+        /* remove class active for the active product */
 
-      /* START LOOP: for each active product */
+        /* END: if the active product isn't the element of thisProduct */
 
-      /* START: if the active product isn't the element of thisProduct */
+        /* END LOOP: for each active product */
 
-      /* remove class active for the active product */
+        /* END: click event listener to trigger */
+      });
 
-      /* END: if the active product isn't the element of thisProduct */
-
-      /* END LOOP: for each active product */
-
-    /* END: click event listener to trigger */
+      
     }  
   }
   const app = {
-    initMenu: function () {
-      const testProduct = new Product();
-      console.log('testProduct:', testProduct);
-       
-      }
-    },
-    initData: function () {
-      const thisApp = this;
-      thisApp.data = dataSource;
-    },
     init: function () {
       const thisApp = this;
       console.log('*** App starting ***');
@@ -117,7 +114,17 @@
       thisApp.initData();
      
       thisApp.initMenu();
-    },
+    },  
+    initData: function () {
+      const thisApp = this;
+      thisApp.data = dataSource;
+    },  
+    initMenu: function () {
+      const testProduct = new Product();
+      console.log('testProduct:', testProduct);
+       
+    }
   };
+   
   app.init();
 }
