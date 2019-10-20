@@ -126,15 +126,7 @@
      
       thisApp.initMenu();
     },  
-    //    initData: function () {
-    //      const thisApp = this;
-    //      thisApp.data = dataSource;
-    //    },  
-    //    initMenu: function () {
-    //      const testProduct = new Product();
-    //      console.log('testProduct:', testProduct);
-    //       
-    //    }
+   
   };
    
   app.init();
