@@ -54,9 +54,8 @@
       thisProduct.id = id;
       thisProduct.data = data;
      
-      thisProduct.renderInMenu();
-      thisProduct.initAccordion();     
-      console.log('new Product', thisProduct);
+      thisProduct.renderInMenu();     
+      console.log('new Product:', thisProduct);
     }
     renderInMenu(){
       const thisProduct = this;
@@ -107,8 +106,9 @@
     initMenu: function(){
       const ThisApp = this;
       console.log('thisApp.data:', ThisApp.data);    
-      const testProduct = new Product();
-      console.log('testProduct:', testProduct);
+      for(let productData in ThisApp.data.products){
+        new Product(productData, ThisApp.data.products[productData]);     
+      }
     },
     initData: function(){
       const thisApp = this;
