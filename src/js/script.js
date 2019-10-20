@@ -105,9 +105,16 @@
   }
   const app = {
     initMenu: function(){
+      const ThisApp = this;
+      console.log('thisApp.data:', ThisApp.data);    
       const testProduct = new Product();
       console.log('testProduct:', testProduct);
-    },      
+    },
+    initData: function(){
+      const thisApp = this;
+      thisApp.data = dataSource;
+            
+    },  
     init: function () {
       const thisApp = this;
       console.log('*** App starting ***');
@@ -119,10 +126,10 @@
      
       thisApp.initMenu();
     },  
-    initData: function () {
-      const thisApp = this;
-      thisApp.data = dataSource;
-    },  
+    //    initData: function () {
+    //      const thisApp = this;
+    //      thisApp.data = dataSource;
+    //    },  
     //    initMenu: function () {
     //      const testProduct = new Product();
     //      console.log('testProduct:', testProduct);
