@@ -53,9 +53,12 @@
       const thisProduct = this;
       thisProduct.id = id;
       thisProduct.data = data;
+      thisProduct.renderInMenu();
+      thisProduct.getElements();
       thisProduct.initAccordion();
+    
      
-      thisProduct.renderInMenu();     
+        
       console.log('new Product:', thisProduct);
     }
     renderInMenu(){
@@ -97,8 +100,12 @@
         for( let activeproduct of activeproducts) {
           console.log('ThisProduct:',thisProduct);
           console.log('activeproduct:',activeproduct);
+          /* START: if the active product isn't the element of thisProduct */
+          if(activeproduct !== thisProduct.element) {
+            activeproduct.classList.remove('active');
+          }    
         }
-        /* START: if the active product isn't the element of thisProduct */
+        
 
         /* remove class active for the active product */
 
